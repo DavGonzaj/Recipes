@@ -24,7 +24,7 @@ def create_recipe():
         "name": request.form["name"],
         "description": request.form["description"],
         "instructions": request.form["instructions"],
-        "under30": int(request.form["under30"]),
+        "under30": request.form["under30"],
         "date_made": request.form["date_made"],
         "user_id": session["user_id"]
     }

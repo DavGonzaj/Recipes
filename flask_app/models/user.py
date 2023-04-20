@@ -23,7 +23,7 @@ class User:
 
     @classmethod
     def get_all(cls):
-        query = "SELECT * FROM recipes_schema.users;"
+        query = "SELECT * FROM users;"
         results = connectToMySQL(cls.db).query_db(query)
         users = []
         for row in results:
@@ -40,7 +40,7 @@ class User:
 
     @classmethod
     def get_by_id(cls, data):
-        query = "SELECT * FROM recipes_schema.users WHERE id = %(id)s;"
+        query = "SELECT * FROM users WHERE user.id = %(id)s;"
         results = connectToMySQL(cls.db).query_db(query, data)
         return cls(results[0])
 

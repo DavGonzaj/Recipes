@@ -34,18 +34,20 @@
                 <tr>
                     <th>Name</th>
                     <th>Under 30 Minutes?</th>
+                    <th>Posted by</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 {% for recipe in recipes %}
                 <tr>
-                    <td>{{recipe.name}}</td>
-                    {% if recipe.under30 == 1 %}
-                    <td>Yes</td>
+                    <td>{{recipe.name}}
+                    {% if recipe.under %}
+                        Yes
                     {% else %}
-                    <td>No</td>
+                        No
                     {% endif %}
+                    </td>
                     <td>
                         <a href="/recipe/{{recipe.id}}">View Instructions</a>
                         {% if recipe.user_id == session.user_id %}
